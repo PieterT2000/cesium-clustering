@@ -8,9 +8,6 @@
     "url": "https://github.com/pietert2000"
   },
   "type": "module",
-  "files": [
-    "."
-  ],
   "main": "./cesium-clusterer.umd.js",
   "module": "./cesium-clusterer.es.js",
   "exports": {
