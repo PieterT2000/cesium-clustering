@@ -1,6 +1,6 @@
 {
   "name": "cesium-clusterer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "author": {
     "name": "Pieter van Tuijl",
@@ -16,5 +16,16 @@
       "require": "./cesium-clusterer.umd.js"
     }
   },
-  "types": "./main.d.ts"
+  "types": "./main.d.ts",
+  "dependencies": {
+    "@turf/centroid": "^6.5.0",
+    "@turf/helpers": "^7.1.0",
+    "@types/geojson": "^7946.0.10",
+    "quickhull3d": "^2.1.0",
+    "supercluster": "^8.0.1",
+    "uuid": "^9.0.0"
+  },
+  "peerDependencies": {
+    "cesium": "^1.100.0"
+  }
 }
