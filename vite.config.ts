@@ -32,7 +32,12 @@ export default defineConfig({
         },
         plugins: [
           copy({
-            targets: [{ src: ["package.json", "README.md"], dest: "dist/" }],
+            targets: [
+              {
+                src: ["package.json", "README.md", ".npmignore"],
+                dest: "dist/",
+              },
+            ],
             hook: "writeBundle",
           }),
         ],

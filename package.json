@@ -20,7 +20,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node ./scripts/removePackageJsonDeps.js",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "echo \"Error: no test specified\"",
+    "release": "npm run build && cd dist && np"
   },
   "devDependencies": {
     "@types/supercluster": "^7.1.3",

@@ -27,5 +27,13 @@ if (pkg.devDependencies) {
   removeDependencyKeysIfNotTypes(pkg.devDependencies);
 }
 
+if(pkg.scripts) {
+  Object.keys(pkg.scripts).forEach((script) => {
+    if (script !== 'test') {
+      delete pkg.scripts[script];
+    }
+  })
+}
+
 // Write the modified package.json back to the dist folder
 fs.writeFileSync(packagePath, JSON.stringify(pkg, null, 2));
