@@ -1,15 +1,25 @@
 {
-  "name": "cesium-clustering",
-  "version": "0.0.0",
+  "name": "cesium-clusterer",
+  "version": "0.0.3",
+  "license": "MIT",
   "author": {
     "name": "Pieter van Tuijl",
     "email": "pietervantuijl2000@gmail.com",
     "url": "https://github.com/pietert2000"
   },
-  "license": "MIT",
+  "type": "module",
+  "main": "./cesium-clusterer.umd.js",
+  "module": "./cesium-clusterer.es.js",
+  "exports": {
+    ".": {
+      "import": "./cesium-clusterer.es.js",
+      "require": "./cesium-clusterer.umd.js"
+    }
+  },
+  "types": "./main.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node ./scripts/removePackageJsonDeps.js",
     "serve": "vite preview"
   },
   "devDependencies": {
