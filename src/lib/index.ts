@@ -46,6 +46,7 @@ class CesiumCluster {
       );
       if (this.lastZoomLevel !== currentZoomLevel) {
         this.lastZoomLevel = currentZoomLevel;
+        console.log(currentZoomLevel);
         this.render();
       }
     });
@@ -72,7 +73,6 @@ class CesiumCluster {
       this.entities.set(entity.id, entity);
       entity.show = false;
 
-      // console.log(entity.polygon.hierarchy?.getValue(Cesium.JulianDate.now()));
       const polgyonHierarchy = entity.polygon.hierarchy?.getValue(
         Cesium.JulianDate.now()
       );
@@ -85,7 +85,6 @@ class CesiumCluster {
 
       const geojsonPolygon = polygon([outerRing, ...(innerRings || [])]);
       const center = (centroid(geojsonPolygon) as Feature<Point>).geometry;
-      console.log(outerRing);
       clusterableFeatures.push({
         type: "Feature",
         id: entity.id,
@@ -112,7 +111,6 @@ class CesiumCluster {
     this.clusterDataSource.entities.suspendEvents();
     this.clusterDataSource.entities.removeAll();
     this.entities.forEach((entity) => {
-      // console.log(entity);
       entity.show = false;
     });
 
@@ -125,7 +123,6 @@ class CesiumCluster {
 
     const clusterEntities: Entity[] = [];
     clusters.forEach((cluster) => {
-      // console.log(cluster);
       if (cluster.properties.cluster) {
         const clusterEntity = toCesiumEntity(cluster);
         if (clusterEntity) clusterEntities.push(clusterEntity);

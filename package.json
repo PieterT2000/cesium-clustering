@@ -2,6 +2,13 @@
   "name": "cesium-clusterer",
   "version": "0.0.3",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PieterT2000/cesium-clustering"
+  },
+  "bugs": {
+    "url": "https://github.com/PieterT2000/release-automation/issues"
+  },
   "author": {
     "name": "Pieter van Tuijl",
     "email": "pietervantuijl2000@gmail.com",
@@ -22,7 +29,8 @@
     "build": "vite build && node ./scripts/removePackageJsonDeps.js",
     "serve": "vite preview",
     "test": "echo \"Error: no test specified\"",
-    "release": "npm run build && cd dist && np"
+    "release": "npm run build && cd dist && np",
+    "watch": "vite build --watch"
   },
   "devDependencies": {
     "@types/supercluster": "^7.1.3",
