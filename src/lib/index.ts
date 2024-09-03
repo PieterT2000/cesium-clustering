@@ -46,7 +46,6 @@ class CesiumCluster {
       );
       if (this.lastZoomLevel !== currentZoomLevel) {
         this.lastZoomLevel = currentZoomLevel;
-        console.log(currentZoomLevel);
         this.render();
       }
     });
