@@ -29,7 +29,7 @@
     "build": "vite build && node ./scripts/removePackageJsonDeps.js",
     "serve": "vite preview",
     "test": "echo \"Error: no test specified\"",
-    "release": "npm version patch && git push && && npm run build && cd dist && np",
+    "release": "npm version patch && git push && npm run build && cd dist && np",
     "watch": "vite build --watch"
   },
   "devDependencies": {
