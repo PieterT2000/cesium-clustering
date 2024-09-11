@@ -82,14 +82,31 @@ class CesiumCluster {
         polgyonHierarchy.holes as { positions: Cartesian3[] }[] | undefined
       )?.map((hole) => hole.positions.map(getLonLatFromCartesian));
 
-      const geojsonPolygon = polygon([outerRing, ...(innerRings || [])]);
-      const center = (centroid(geojsonPolygon) as Feature<Point>).geometry;
-      clusterableFeatures.push({
-        type: "Feature",
-        id: entity.id,
-        geometry: center,
-        properties: {},
-      });
+      const rings = [outerRing, ...(innerRings || [])];
+      for (const ring of rings) {
+        for (let j = 0; j < ring[ring.length - 1].length; j++) {
+          if (ring[ring.length - 1][j] !== ring[0][j]) {
+            // First and last point are not the same for this ring
+            ring.push(ring[0]);
+          }
+        }
+      }
+
+      try {
+        const geojsonPolygon = polygon(rings);
+
+        const center = (centroid(geojsonPolygon) as Feature<Point>).geometry;
+        clusterableFeatures.push({
+          type: "Feature",
+          id: entity.id,
+          geometry: center,
+          properties: {},
+        });
+      } catch (error) {
+        console.error(
+          `Failed to create a cluster from the entity with id: ${entity.id}`
+        );
+      }
     });
 
     this.clusterer.load(clusterableFeatures);
