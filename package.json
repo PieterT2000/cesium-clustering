@@ -1,6 +1,6 @@
 {
   "name": "cesium-clusterer",
-  "version": "0.0.10",
+  "version": "0.0.8",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
     "build": "vite build && node ./scripts/removePackageJsonDeps.js",
     "serve": "vite preview",
     "test": "echo \"Error: no test specified\"",
-    "release": "npm version patch && git push && npm run build && cd dist && np",
+    "release": "npm run build && cd dist && np",
     "watch": "vite build --watch"
   },
   "devDependencies": {
