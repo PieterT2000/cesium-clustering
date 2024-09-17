@@ -14,7 +14,6 @@ export default defineConfig({
       insertTypesEntry: true,
       compilerOptions: {
         moduleResolution: 99,
-        isolatedModules: true,
         allowSyntheticDefaultImports: true,
       },
     }),

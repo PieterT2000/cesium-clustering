@@ -16,11 +16,11 @@
   },
   "type": "module",
   "main": "./cesium-clusterer.umd.js",
-  "module": "./cesium-clusterer.es.js",
+  "module": "./cesium-clusterer.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "import": "./cesium-clusterer.es.js",
+      "import": "./cesium-clusterer.js",
       "require": "./cesium-clusterer.umd.js",
       "types": "./index.d.ts"
     }
