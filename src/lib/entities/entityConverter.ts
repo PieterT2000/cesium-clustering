@@ -1,9 +1,9 @@
 import * as Cesium from "cesium";
 import type { Entity as CesiumEntity } from "cesium";
 import { AnyProps, ClusterFeature, PointFeature } from "supercluster";
-import { mapToRange } from "../util";
+import { mapToRange } from "../util.js";
 import { v4 as uuid } from "uuid";
-import { pointToCartesian } from "./geojson/conversions";
+import { pointToCartesian } from "./geojson/conversions.js";
 
 const scaleByDistanceScalar = new Cesium.NearFarScalar(10.0e4, 1, 8.0e6, 0.0);
 

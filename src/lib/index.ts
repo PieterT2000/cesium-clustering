@@ -4,8 +4,8 @@ import Supercluster, { AnyProps } from "supercluster";
 import centroid from "@turf/centroid";
 import { polygon } from "@turf/helpers";
 import { BBox, Feature, Point } from "geojson";
-import { altitudeToZoom, getCameraAltitude } from "./util";
-import { toCesiumEntity } from "./entities/entityConverter";
+import { altitudeToZoom, getCameraAltitude } from "./util.js";
+import { toCesiumEntity } from "./entities/entityConverter.js";
 
 // BBOX of the United Kingdom [west, south, east, north]
 const DEFAULT_BBOX = [-180, -85, 180, 85] as BBox;

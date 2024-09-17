@@ -14,6 +14,7 @@ export default defineConfig({
       insertTypesEntry: true,
       compilerOptions: {
         moduleResolution: 99,
+        isolatedModules: true,
         allowSyntheticDefaultImports: true,
       },
     }),
@@ -26,6 +27,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ["cesium"],
+      // @ts-ignore
       output: {
         globals: {
           cesium: "Cesium",
